@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+
+	<title>CSS Pokédex Grid</title>
+</head>
+<body>
+	<div id="app">
+		<div id="wrapper" v-bind:style="{ 'max-width': grid.size + 'px' }">
+
+			<section class="grid" >
+				<div class="pixel" v-for="i in grid.length" :key="i" v-bind:style="pixelGridStyle('line')">
+					<div class="pixel" v-for="j in grid.length" :key="j" v-bind:style="[pixelGridStyle('column'), mapGrid(i, j)]"></div>
+				</div>
+			</section>
+
+			<img src="data/charizard.png" id="poke-img" @click="getGrid($event)">
+		</div>	
+	</div>
+
+	<!-- JS -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript" src="./js/bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+$font-path: '../fonts/';
+
+@font-face {
+	font-family: 'RationalTW_Display';
+	src: url($font-path + 'Rene Bieder - RationalTWDisplay-Medium.otf');
+}
+@font-face {
+	font:{
+		family: 'RationalTW_Display';
+		weight: 700;
+	}
+	src: url($font-path + 'Rene Bieder - RationalTWDisplay-ExtraBold.otf');
+}
+@font-face {
+	font:{
+		family: 'RationalTW_Display';
+		weight: 300;
+	}
+	src: url($font-path + 'Rene Bieder - RationalTWDisplay-Light.otf');
+}
+@font-face {
+	font:{
+		family: 'RationalTW_Display';
+		weight: 100;
+	}
+	src: url($font-path + 'Rene Bieder - RationalTWDisplay-Hairline.otf');
+}
+
+@font-face {
+	font-family: 'RationalTW_Display_Hairline';
+	src: url($font-path + 'Rene Bieder - RationalTWDisplay-Hairline.otf');
+}
+
+@mixin default-title($color: $primary-color) {
+	font: {
+		family: $primary-font;
+		size: 50px;
+		weight: 100;
+	}
+	text: {
+		transform: uppercase;
+		align: center;
+	}
+	letter-spacing: 8px;
+	margin: 0 0 20px;
+}

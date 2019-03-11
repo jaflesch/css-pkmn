@@ -1,0 +1,57 @@
+header nav.navbar-custom {
+	background: $primary-color;
+	height: $header-height;
+
+	img {
+		height: 65px;
+	}
+
+	.navbar-brand { 
+		height: auto;
+		padding: 8px 15px;
+	}
+
+	.nav > li {
+		+ li { margin-left: 30px; }
+		> a {
+			@include transition();
+			font: {
+				family: $primary-font;
+				size: 15px;
+				weight: 300;
+			}
+			color: #fff;
+			position: relative;
+			padding-top: 47px;
+
+			&:hover, &:focus, &:active {
+				@include transition();
+				background: $primary-color;
+				color: $primary-color;
+
+				.text { 
+					position: relative; 
+					z-index: 2;
+				}
+				.mask {
+					height: 100%;
+					transition: all 100ms ease;				
+				}
+			}
+
+			.mask { 
+				@include colors(#fff, $primary-color);
+				display: block;
+				overflow: hidden;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 0;
+				z-index: 1;
+				box-shadow: 0 1px 3px rgba(#000, .15);
+				transition: all 150ms ease;
+			}
+		}
+	}
+}
